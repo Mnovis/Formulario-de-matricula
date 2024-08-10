@@ -23,7 +23,6 @@
 
   --semantic-error: #DC2626;
 
-
 }
 
 body {
@@ -38,8 +37,6 @@ h2 {
   color: var(--text-primary);
 }
 
-img{
-  width: 100%;
+img {
   height: auto;
-
 }
