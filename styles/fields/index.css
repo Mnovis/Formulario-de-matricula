@@ -5,13 +5,14 @@ textarea,
 select {
   appearance: none;
   width: 100%;
-  height: 100%;
+  height: 90%;
   border-radius: .5rem;
   border: 1px solid var(--stroke-default);
 
   padding: .75 1rem;
   padding-left: .5rem;
   font: var(--text);
+
 }
 
 label {
@@ -52,21 +53,48 @@ input[type="date"] {
 }
 
 select {
-  background: url(../../assets/icons/arrow-down-01.svg) no-repeat right 
-  calc(50%);
-  
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat right calc(100% - 0.75rem);
+
 }
 
-.adress .flex{
-gap: 1.25rem;
+.adress .flex {
+  gap: 1.25rem;
 }
 
-input{
-  &[disabled]{
+input {
+  &[disabled] {
     background-color: var(--surface-disabled);
 
     border: 1px solid var(--stroke-default);
 
     color: var(text-primary);
   }
+
+  &:invalid{
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+& + small{
+  font: var(--text-sm);
+  color: #78716C;
+
+  display: inline-block;
+  margin-top: .25rem;
+}
+
+&[required] + .error{
+  display: flex;
+
+  align-items: center;
+  gap: .25rem;
+
+  font: var(--text-sm);
+  color: var(--semantic-error);
+
+  margin-top: .25rem;
+}
+
+&:not(:focus):valid + .error{
+  display: none;
+}
 }
